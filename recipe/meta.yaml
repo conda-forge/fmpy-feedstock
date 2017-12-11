@@ -1,5 +1,5 @@
 {% set name = "fmpy" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 {% set sha256 = "230dfc68fa47ab0c8b9a26401ca1a7fb28cca61e97d377cf0a7d0861eb6f684f" %}
 
 package:
@@ -14,12 +14,14 @@ requirements:
     - python
     - pip
   run:
+    - dask
     - lxml
+    - matplotlib
     - numpy
     - pathlib
     - python
-    - requests
     - pywin32  # [win]
+    - requests
 
 test:
   imports:
