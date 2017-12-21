@@ -1,6 +1,5 @@
 {% set name = "fmpy" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "230dfc68fa47ab0c8b9a26401ca1a7fb28cca61e97d377cf0a7d0861eb6f684f" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,6 +7,7 @@ package:
 
 build:
   number: 0
+  script: python -m pip install --no-deps fmpy=={{ version }}
 
 requirements:
   build:
