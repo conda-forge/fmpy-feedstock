@@ -1,12 +1,12 @@
 {% set name = "fmpy" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install --no-deps fmpy=={{ version }}
   entry_points:
     - fmpy = fmpy.command_line:main
@@ -22,6 +22,8 @@ requirements:
     - numpy
     - pathlib
     - python
+    - pyqt
+    - pyqtgraph
     - pywin32  # [win]
     - requests
 
@@ -30,6 +32,7 @@ test:
     - fmpy
     - fmpy.cross_check
     - fmpy.examples
+    - fmpy.gui
     - fmpy.ssp
     - fmpy.ssp.examples
     - fmpy.sundials
