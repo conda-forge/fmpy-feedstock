@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 1
+  number: 2
   script: python -m pip install --no-deps fmpy=={{ version }}
   entry_points:
     - fmpy = fmpy.command_line:main
