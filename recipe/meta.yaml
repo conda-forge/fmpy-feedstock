@@ -7,7 +7,7 @@ package:
 
 build:
   number: 1000
-  script: python -m pip install --no-deps fmpy=={{ version }}
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - fmpy = fmpy.command_line:main
 
