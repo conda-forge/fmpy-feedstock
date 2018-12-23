@@ -1,17 +1,13 @@
 {% set name = "fmpy" %}
-{% set version = "0.2.7" %}
+{% set version = "0.2.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
-  
-source:
-  url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: 0984c73e119078f6feadf544dad6908f18d023779dcd2000b69539e14f35d9fc
 
 build:
-  number: 1000
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: python -m pip install --no-deps fmpy=={{ version }}
   entry_points:
     - fmpy = fmpy.command_line:main
 
