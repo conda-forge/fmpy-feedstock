@@ -4,10 +4,14 @@
 package:
   name: {{ name|lower }}
   version: {{ version }}
+  
+source:
+  url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
+  sha256: 0984c73e119078f6feadf544dad6908f18d023779dcd2000b69539e14f35d9fc
 
 build:
-  number: 0
-  script: python -m pip install --no-deps fmpy=={{ version }}
+  number: 1000
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - fmpy = fmpy.command_line:main
 
