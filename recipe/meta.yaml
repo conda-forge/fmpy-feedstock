@@ -17,8 +17,13 @@ build:
 
 requirements:
   build:
-    - python
+    - lxml
+    - numpy
+    - pathlib
     - pip
+    - pyqt
+    - python
+    - pywin32  # [win]
   run:
     - dask
     - lxml
