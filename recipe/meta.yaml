@@ -52,6 +52,8 @@ about:
   license_family: BSD
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   summary: 'Simulate Functional Mockup Units (FMUs) in Python'
+  doc_url: https://fmpy.readthedocs.io/
+  dev_url: https://github.com/CATIA-Systems/FMPy
 
 extra:
   recipe-maintainers:
