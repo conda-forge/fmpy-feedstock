@@ -10,7 +10,7 @@ source:
   sha256: e161c8b90148436444291de77bd4f5015f09280f173cc859c25c6da1e9c298a6
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - fmpy = fmpy.command_line:main
