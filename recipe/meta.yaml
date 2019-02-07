@@ -1,5 +1,5 @@
 {% set name = "fmpy" %}
-{% set version = "0.2.8" %}
+{% set version = "0.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: 1abdca1bf5ffe8e5fac9e8d1078c33a2a3fe092f1391158082d7e136247d12ab
+  sha256: e161c8b90148436444291de77bd4f5015f09280f173cc859c25c6da1e9c298a6
 
 build:
   number: 1
