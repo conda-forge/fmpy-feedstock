@@ -2,9 +2,15 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+numpy:
+- '1.11'
 pin_run_as_build:
+  pyqt:
+    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
+pyqt:
+- '5.6'
 python:
 - '3.6'
