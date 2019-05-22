@@ -11,7 +11,7 @@ source:
   sha256: {{ sha }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - fmpy = fmpy.command_line:main
