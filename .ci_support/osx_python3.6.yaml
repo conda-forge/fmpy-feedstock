@@ -1,13 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
-build_number_decrement:
-- '0'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-docker_image:
-- condaforge/linux-anvil
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -15,12 +11,8 @@ macos_min_version:
 numpy:
 - '1.14'
 pin_run_as_build:
-  pyqt:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
-pyqt:
-- '5.9'
 python:
 - '3.6'
