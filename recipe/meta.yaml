@@ -1,5 +1,5 @@
 {% set name = "fmpy" %}
-{% set version = "0.2.11" %}
+{% set version = "0.2.12" %}
 {% set sha = "baee6294ad5b64830e04f97b72277e7da24ba0c895020bc3f768e184ea7617c4" %}
 
 package:
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha }}
 
 build:
-  number: 1
+  number: 0
   # No qt 5.9 on vc9.
   skip: True  # [win and py2k]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
