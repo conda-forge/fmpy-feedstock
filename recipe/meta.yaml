@@ -1,5 +1,5 @@
 {% set name = "fmpy" %}
-{% set version = "0.2.12" %}
+{% set version = "0.2.13" %}
 {% set sha = "f0a616473e4f245a2259e65e1c236f66b6899976158fef6624d3d7a71dc3c89b" %}
 
 package:
