@@ -1,6 +1,6 @@
 {% set name = "fmpy" %}
-{% set version = "0.2.13" %}
-{% set sha = "5fd0c4f3e7d81fc3530f8cc8d40912d31d4656b7f05b4e0640c48ab21cb48886" %}
+{% set version = "0.2.14" %}
+{% set sha = "34b774551043e19bc6d96b4247813f0ea57cf918ecf486f7ebaa388e1f1baa9b" %}
 # calculate on macOS with: shasum -a 256 FMPy-*.tar.gz
 
 package:
