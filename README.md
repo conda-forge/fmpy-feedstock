@@ -85,24 +85,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_python3.6</td>
+              <td>win_python3.6vc14</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5322&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.6vc14" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_python3.7</td>
+              <td>win_python3.7vc14</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5322&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.7vc14" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_python3.8</td>
+              <td>win_python3.8vc14</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5322&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fmpy-feedstock?branchName=master&jobName=win&configuration=win_python3.8vc14" alt="variant">
                 </a>
               </td>
             </tr>
