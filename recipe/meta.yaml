@@ -1,40 +1,36 @@
-{% set name = "fmpy" %}
 {% set version = "0.2.14" %}
-{% set sha = "34b774551043e19bc6d96b4247813f0ea57cf918ecf486f7ebaa388e1f1baa9b" %}
-# calculate on macOS with: shasum -a 256 FMPy-*.tar.gz
 
 package:
-  name: {{ name|lower }}
+  name: fmpy
   version: {{ version }}
 
 source:
   url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: {{ sha }}
+  sha256: 34b774551043e19bc6d96b4247813f0ea57cf918ecf486f7ebaa388e1f1baa9b
 
 build:
-  number: 0
-  # No qt 5.9 on vc9.
-  skip: True  # [win and py2k]
+  number: 1
+  skip: True  # [win and vc<14]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - fmpy = fmpy.command_line:main
 
 requirements:
   build:
+    - python
+    - pip
     - lxml
     - numpy
     - pathlib
-    - pip
     - pyqt
-    - python
     - pywin32  # [win]
   run:
+    - python
     - dask
     - lxml
     - matplotlib
     - numpy
     - pathlib
-    - python
     - pyqt
     - pyqtgraph
     - pywin32  # [win]
@@ -54,7 +50,7 @@ about:
   home: https://github.com/CATIA-Systems/FMPy
   license: BSD-3-Clause
   license_family: BSD
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
+  license_file: LICENSE.txt
   summary: 'Simulate Functional Mockup Units (FMUs) in Python'
   doc_url: https://fmpy.readthedocs.io/
   dev_url: https://github.com/CATIA-Systems/FMPy
