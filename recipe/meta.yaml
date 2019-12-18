@@ -17,8 +17,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - python
     - pip
     - lxml
