@@ -24,6 +24,7 @@ requirements:
     - pathlib
     - pyqt
     - pywin32  # [win]
+    - requests
   run:
     - python
     - dask
