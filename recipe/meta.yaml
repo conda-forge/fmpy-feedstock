@@ -11,7 +11,6 @@ source:
 build:
   number: 0
   noarch: python
-  skip: True  # [win and vc<14]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - fmpy = fmpy.command_line:main
