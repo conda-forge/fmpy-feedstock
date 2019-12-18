@@ -5,11 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: eeb490ba90999ec6c3348e526f1b7cef1e9a4faf7c23d6bd6c94232a99842c9e
+  url: https://github.com/CATIA-Systems/FMPy/archive/feature/add-sundials-libs.tar.gz
+  sha256: fecfec0f58467eb361e7fe5856a134d6a055af4d72e6e25dc3b3b82a976b99d9
 
 build:
   number: 0
+  noarch: python
   skip: True  # [win and vc<14]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
@@ -17,9 +18,6 @@ build:
 
 requirements:
   build:
-    - cmake
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - python
     - pip
     - lxml
@@ -27,7 +25,6 @@ requirements:
     - pathlib
     - pyqt
     - pywin32  # [win]
-    - requests
   run:
     - python
     - dask
