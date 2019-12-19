@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/CATIA-Systems/FMPy/archive/feature/add-sundials-libs.tar.gz
-  sha256: fecfec0f58467eb361e7fe5856a134d6a055af4d72e6e25dc3b3b82a976b99d9
+  sha256: 590f34c81ad5764481c88ae3d747b8cf78069a4e51b7ee9a9e41f759bbb77ae0
 
 build:
   number: 0
-  noarch: python
+  skip: True  # [win and vc<14]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - fmpy = fmpy.command_line:main
