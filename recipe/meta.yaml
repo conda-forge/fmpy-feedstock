@@ -1,4 +1,4 @@
-{% set version = "0.2.14" %}
+{% set version = "0.2.16" %}
 
 package:
   name: fmpy
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: 34b774551043e19bc6d96b4247813f0ea57cf918ecf486f7ebaa388e1f1baa9b
+  sha256: 5f6155f15a95d6bdd4a96d97c7f8af836d128a8d4d5b95b052daf019dcd7557c
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and vc<14]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
