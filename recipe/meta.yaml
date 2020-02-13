@@ -15,25 +15,6 @@ build:
   entry_points:
     - fmpy = fmpy.command_line:main
 
-requirements:
-  run:
-    - dask
-    - fmpy-base
-    - matplotlib
-    - pyqt
-    - pyqtgraph
-    - requests
-
-test:
-  imports:
-    - fmpy
-    - fmpy.cross_check
-    - fmpy.examples
-    - fmpy.gui
-    - fmpy.ssp
-    - fmpy.ssp.examples
-    - fmpy.sundials
-
 outputs:
   - name: fmpy-base
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
@@ -52,6 +33,22 @@ outputs:
         - numpy
         - pathlib
         - pywin32  # [win]
+    test:
+      imports:
+        - fmpy
+        - fmpy.ssp
+        - fmpy.ssp.examples
+        - fmpy.sundials
+
+  - name: fmpy
+    requirements:
+      run:
+        - dask
+        - fmpy-base
+        - matplotlib
+        - pyqt
+        - pyqtgraph
+        - requests
     test:
       imports:
         - fmpy
