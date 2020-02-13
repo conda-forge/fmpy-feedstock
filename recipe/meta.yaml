@@ -12,6 +12,8 @@ source:
 build:
   number: 1
   skip: True  # [win and vc<14]
+  entry_points:
+    - fmpy = fmpy.command_line:main
 
 requirements:
   run:
@@ -35,8 +37,6 @@ test:
 outputs:
   - name: fmpy-base
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-    entry_points:
-      - fmpy = fmpy.command_line:main
     requirements:
       build:
         - python
