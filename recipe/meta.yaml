@@ -10,31 +10,16 @@ source:
   # macOS: shasum -a 256 <file>
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  entry_points:
-    - fmpy = fmpy.command_line:main
 
 requirements:
-  build:
-    - python
-    - pip
-    - lxml
-    - numpy
-    - pathlib
-    - pyqt
-    - pywin32  # [win]
   run:
-    - python
     - dask
-    - lxml
+    - fmpy-base
     - matplotlib
-    - numpy
-    - pathlib
     - pyqt
     - pyqtgraph
-    - pywin32  # [win]
     - requests
 
 test:
@@ -46,6 +31,36 @@ test:
     - fmpy.ssp
     - fmpy.ssp.examples
     - fmpy.sundials
+
+outputs:
+  - name: fmpy-base
+    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+    entry_points:
+      - fmpy = fmpy.command_line:main
+    requirements:
+      build:
+        - python
+        - pip
+        - lxml
+        - numpy
+        - pathlib
+        - pyqt
+        - pywin32  # [win]
+      run:
+        - python
+        - lxml
+        - numpy
+        - pathlib
+        - pywin32  # [win]
+    test:
+      imports:
+        - fmpy
+        - fmpy.cross_check
+        - fmpy.examples
+        - fmpy.gui
+        - fmpy.ssp
+        - fmpy.ssp.examples
+        - fmpy.sundials
 
 about:
   home: https://github.com/CATIA-Systems/FMPy
