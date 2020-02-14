@@ -17,7 +17,8 @@ build:
 
 outputs:
   - name: fmpy-base
-    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
     requirements:
       build:
         - python
