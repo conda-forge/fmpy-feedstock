@@ -1,4 +1,4 @@
-{% set version = "0.2.17" %}
+{% set version = "0.2.18" %}
 
 package:
   name: fmpy
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/CATIA-Systems/FMPy/archive/v{{ version }}.tar.gz
-  sha256: a1460271190cfe9b32779b2cc78591ad09ca15475c8a13761cb10d33840d48c1
+  sha256: e8eb8010fa2c6bd3bc1ae8fd7b250e253b99f11c89f98adcba4596a18f09db77
   # macOS: shasum -a 256 <file>
 
 build:
   number: 0
-  skip: True  # [win and vc<14]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [win and vc<14]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - fmpy = fmpy.command_line:main
 
@@ -52,7 +52,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Simulate Functional Mockup Units (FMUs) in Python'
+  summary: Simulate Functional Mockup Units (FMUs) in Python
   doc_url: https://fmpy.readthedocs.io/
   dev_url: https://github.com/CATIA-Systems/FMPy
 
