@@ -12,7 +12,8 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  script: {{ PYTHON }} -m pip install --no-deps -vv *.whl
+  script: build_pkg.bat  # [win]
+  script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
 
   entry_points:
     - fmpy = fmpy.command_line:main
