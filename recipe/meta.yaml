@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  script: for %f in (*.whl) do pip install --no-deps -vv %f  # [win]
+  script: 'for %f in (*.whl) do pip install --no-deps -vv "%f"'  # [win]
   script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
 
   entry_points:
