@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  script: python -m pip install --no-deps -vv fmpy=={{ version }}  # [win]
+  script: for %f in (*.whl) do {{ PYTHON }} -m pip install --no-deps -vv "%f"  # [win]
   script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
 
   entry_points:
