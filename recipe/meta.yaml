@@ -30,6 +30,7 @@ requirements:
   run:
     - python
     - dask
+    - lark-parser
     - lxml
     - matplotlib-base
     - numpy
