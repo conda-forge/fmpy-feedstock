@@ -12,43 +12,53 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  script: 'for %%f in (*.whl) do pip install --no-deps -vv "%%f"'  # [win]
-  script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
 
   entry_points:
     - fmpy = fmpy.command_line:main
 
-requirements:
-  build:
-    - python
-    - pip
-    - lxml
-    - numpy
-    - pathlib
-    - pyqt
-    - pywin32  # [win]
-  run:
-    - python
-    - dask
-    - lark-parser
-    - lxml
-    - matplotlib-base
-    - numpy
-    - pathlib
-    - pyqt
-    - pyqtgraph
-    - pywin32  # [win]
-    - requests
+outputs:
+  - name: fmpy-base
+    script: 'for %%f in (*.whl) do pip install --no-deps -vv "%%f"'  # [win]
+    script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
+    requirements:
+      build:
+        - python
+        - pip
+        - lxml
+        - numpy
+        - pathlib
+        - pyqt
+        - pywin32  # [win]
+      run:
+        - python
+        - lark-parser
+        - lxml
+        - numpy
+        - pathlib
+        - pywin32  # [win]
+        - requests
+    test:
+      imports:
+        - fmpy
+        - fmpy.cross_check
+        - fmpy.examples
+        - fmpy.ssp
+        - fmpy.ssp.examples
+        - fmpy.sundials
 
-test:
-  imports:
-    - fmpy
-    - fmpy.cross_check
-    - fmpy.examples
-    - fmpy.gui
-    - fmpy.ssp
-    - fmpy.ssp.examples
-    - fmpy.sundials
+  - name: fmpy
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - dask
+        - matplotlib-base
+        - pyqt
+        - pyqtgraph
+        - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
+    test:
+      imports:
+        - fmpy.gui
 
 about:
   home: https://github.com/CATIA-Systems/FMPy
