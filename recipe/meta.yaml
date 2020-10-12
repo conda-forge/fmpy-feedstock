@@ -18,8 +18,8 @@ build:
 
 outputs:
   - name: fmpy-base
-    script: 'for %%f in (*.whl) do pip install --no-deps -vv "%%f"'  # [win]
-    script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
     requirements:
       build:
         - python
