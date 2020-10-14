@@ -10,7 +10,7 @@ source:
   # macOS: shasum -a 256 <file>
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   script: 'for %%f in (*.whl) do pip install --no-deps -vv "%%f"'  # [win]
   script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
