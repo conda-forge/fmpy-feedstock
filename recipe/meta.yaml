@@ -1,58 +1,64 @@
-{% set version = "0.2.23" %}
+{% set version = "0.2.24" %}
 
 package:
   name: fmpy
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/94/d6/f135772acf6691808363daedac6d01198edce1e9f15abdb4d74b1117650c/FMPy-0.2.23-py2.py3-none-any.whl
-  sha256: 45892f7a489fdfd2b8c4e1716a97396cc43e7b42505a1c0ca4dfb1a85016f706
+  url: https://files.pythonhosted.org/packages/78/31/73b2f2085ef5927418cbe1465eb453cf1ec6c75c76b36d3978008fd4070c/FMPy-0.2.24-py2.py3-none-any.whl
+  sha256: 71452de8007afdd5be84d74777f2ede539691785a53330d6ee20ec528900b06e
   # macOS: shasum -a 256 <file>
+  # Windows: certutil -hashfile <file> SHA256
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
-  script: 'for %%f in (*.whl) do pip install --no-deps -vv "%%f"'  # [win]
-  script: {{ PYTHON }} -m pip install --no-deps -vv *.whl  # [not win]
-
   entry_points:
     - fmpy = fmpy.command_line:main
 
-requirements:
-  build:
-    - python
-    - pip
-    - lxml
-    - numpy
-    - pathlib
-    - pyqt
-    - pywin32  # [win]
-  run:
-    - python
-    - dask
-    - lark-parser
-    - lxml
-    - matplotlib-base
-    - numpy
-    - pathlib
-    - pyqt
-    - pyqtgraph
-    - pywin32  # [win]
-    - requests
+outputs:
 
-test:
-  imports:
-    - fmpy
-    - fmpy.cross_check
-    - fmpy.examples
-    - fmpy.gui
-    - fmpy.ssp
-    - fmpy.ssp.examples
-    - fmpy.sundials
+  - name: fmpy-base
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
+    requirements:
+      host:
+        - python
+        - pip
+      run:
+        - python
+        - lark-parser
+        - lxml
+        - numpy
+        - pathlib
+        - pywin32  # [win]
+        - requests
+    test:
+      imports:
+        - fmpy
+        - fmpy.cross_check
+        - fmpy.examples
+        - fmpy.ssp
+        - fmpy.ssp.examples
+        - fmpy.sundials
+
+  - name: fmpy
+    build:
+      noarch: python
+    requirements:
+      run:
+        - dask
+        - matplotlib-base
+        - pyqt
+        - pyqtgraph
+        - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
+    test:
+      imports:
+        - fmpy.gui
 
 about:
   home: https://github.com/CATIA-Systems/FMPy
-  license: BSD-3-Clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Simulate Functional Mockup Units (FMUs) in Python
