@@ -1,12 +1,12 @@
-{% set version = "0.2.24" %}
+{% set version = "0.2.25" %}
 
 package:
   name: fmpy
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/78/31/73b2f2085ef5927418cbe1465eb453cf1ec6c75c76b36d3978008fd4070c/FMPy-0.2.24-py2.py3-none-any.whl
-  sha256: 71452de8007afdd5be84d74777f2ede539691785a53330d6ee20ec528900b06e
+  url: https://files.pythonhosted.org/packages/d5/00/a124dd64f60457686d4dbb0f944260a9f443e726f3ac3772f8b67230ba36/FMPy-0.2.25-py2.py3-none-any.whl
+  sha256: 64ac2bdcaff1ffb7addf5e93181548e3eaafe8d704647659571efa6cffeaf804
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
@@ -47,6 +47,7 @@ outputs:
       noarch: python
     requirements:
       run:
+        - dash-bootstrap-components
         - dask
         - matplotlib-base
         - pyqt
@@ -55,6 +56,7 @@ outputs:
     test:
       imports:
         - fmpy.gui
+        - fmpy.webapp
 
 about:
   home: https://github.com/CATIA-Systems/FMPy
