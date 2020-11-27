@@ -29,7 +29,7 @@ outputs:
         - python
         - lark-parser
         - lxml
-        - msgpack
+        - msgpack-python
         - numpy
         - pathlib
         - pywin32  # [win]
