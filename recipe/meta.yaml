@@ -1,12 +1,12 @@
-{% set version = "0.2.25" %}
+{% set version = "0.2.26" %}
 
 package:
   name: fmpy
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/d5/00/a124dd64f60457686d4dbb0f944260a9f443e726f3ac3772f8b67230ba36/FMPy-0.2.25-py2.py3-none-any.whl
-  sha256: 64ac2bdcaff1ffb7addf5e93181548e3eaafe8d704647659571efa6cffeaf804
+  url: https://files.pythonhosted.org/packages/d5/b1/477786c59634992e0a95b663a3ec1ff1f4eadab5bc6ffc74556a986c47b4/FMPy-0.2.26-py2.py3-none-any.whl
+  sha256: a8a1fc4769bbf12f7af0fecd8d613a122d8cff6534abcd9acf3fe86b425e7dce
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
@@ -29,17 +29,19 @@ outputs:
         - python
         - lark-parser
         - lxml
+        - msgpack
         - numpy
         - pathlib
         - pywin32  # [win]
+        - pytz
         - requests
     test:
       imports:
         - fmpy
         - fmpy.cross_check
         - fmpy.examples
+        - fmpy.fmucontainer
         - fmpy.ssp
-        - fmpy.ssp.examples
         - fmpy.sundials
 
   - name: fmpy
