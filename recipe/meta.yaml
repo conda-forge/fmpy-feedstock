@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/d5/b1/477786c59634992e0a95b663a3ec1ff1f4eadab5bc6ffc74556a986c47b4/FMPy-0.2.26-py2.py3-none-any.whl
-  sha256: a8a1fc4769bbf12f7af0fecd8d613a122d8cff6534abcd9acf3fe86b425e7dce
+  url: https://files.pythonhosted.org/packages/95/5c/fd3a1d8178c4223750bc75cb9039852b87f96dd4253e8f8921bf1438d8b6/FMPy-0.2.27-py2.py3-none-any.whl
+  sha256: a27380a3f473fbbb75c6e9f8c9d83f66ade39944f11347b59ebe9e8ff857f68c
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
@@ -52,6 +52,7 @@ outputs:
         - dash-bootstrap-components
         - dask
         - matplotlib-base
+        - nbformat
         - pyqt
         - pyqtgraph
         - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
