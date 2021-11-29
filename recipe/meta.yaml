@@ -1,12 +1,12 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: fmpy
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/fc/ec/fed507b5575f46f41066187bfb684c3a16ae76473081d70422f025d31ace/FMPy-0.3.2-py3-none-any.whl
-  sha256: 10f4d6428bf59285f525d53f767730253f131b0aa00700652dce002e91ae2c52
+  url: https://files.pythonhosted.org/packages/af/6b/ad95c9494279384f77a308a9f579f025c8c3fe9c1e12280bcaac43757b30/FMPy-0.3.3-py3-none-any.whl
+  sha256: c7160b077bb1fee918de736d2fe3da923327758c2cff8d133ad6238159de59b2
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
