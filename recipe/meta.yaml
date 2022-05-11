@@ -1,10 +1,10 @@
 package:
   name: fmpy
-  version: 0.3.8
+  version: 0.3.9
 
 source:
-  url: https://files.pythonhosted.org/packages/19/12/15459fc828e7a90eb7b8e1b91b15fdca05a74a36b3d0352e3ea3ee5dce8d/FMPy-0.3.8-py3-none-any.whl
-  sha256: adb5baecaa179557af138ba2c5b7df1298769e8cc841c3b319bb255860aadccd
+  url: https://files.pythonhosted.org/packages/c8/8d/fd0764b8fdc2cd3e142d8849d01228ff0a1f2ef9366139b33df00909d93e/FMPy-0.3.9-py3-none-any.whl
+  sha256: 53b26e26aa6d7f7025c744543b7fd149528fb4f699ec25c3e03c00df659c6127
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
