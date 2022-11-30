@@ -43,7 +43,7 @@ outputs:
         - fmpy.fmucontainer
         - fmpy.modelica
         - fmpy.ssp
-        - fmpy.sundials
+        - fmpy.sundials  # [not linux]
 
   - name: fmpy
     build:
