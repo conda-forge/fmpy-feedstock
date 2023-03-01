@@ -1,11 +1,11 @@
-About fmpy
-==========
+About fmpy-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fmpy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/CATIA-Systems/FMPy
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fmpy-feedstock/blob/main/LICENSE.txt)
 
 Summary: Simulate Functional Mockup Units (FMUs) in Python
 
