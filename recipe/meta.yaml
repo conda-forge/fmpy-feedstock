@@ -1,10 +1,10 @@
 package:
   name: fmpy
-  version: 0.3.15
+  version: 0.3.16
 
 source:
-  url: https://files.pythonhosted.org/packages/b2/b6/fb4cbc6e8437a8722fd70cff8d31a32750ae14fe1e5b0174873907bff074/FMPy-0.3.15-py3-none-any.whl
-  sha256: ae88ffe6ddda81e647c3f0b40675328ed5c3c4c1964c1b1f78b2fab5f9ac55a5
+  url: https://files.pythonhosted.org/packages/79/36/c9b755bc4bb165c963f2d3f25a2336efc2c43d293b2d9d3844b4dd29cb56/FMPy-0.3.16-py3-none-any.whl
+  sha256: 1140bfc0338826f86ddb30fb23cd6f97a7f3c902ad13c0128fee00b81e611b68
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
@@ -13,6 +13,7 @@ build:
   skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
+  binary_relocation: False
 
 outputs:
 
