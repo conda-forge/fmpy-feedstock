@@ -1,16 +1,15 @@
+{% set version = "0.3.19" %}
+
 package:
   name: fmpy
-  version: 0.3.15
+  version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/b2/b6/fb4cbc6e8437a8722fd70cff8d31a32750ae14fe1e5b0174873907bff074/FMPy-0.3.15-py3-none-any.whl
-  sha256: ae88ffe6ddda81e647c3f0b40675328ed5c3c4c1964c1b1f78b2fab5f9ac55a5
-  # macOS: shasum -a 256 <file>
-  # Windows: certutil -hashfile <file> SHA256
+  url: https://pypi.io/packages/py3/F/FMPy/FMPy-{{ version }}-py3-none-any.whl
+  sha256: d84e98c81c84afd08324097851929ec1ab37f115ec1b1d6366fdc894c4462ef9
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
 
