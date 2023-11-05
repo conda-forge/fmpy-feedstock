@@ -42,6 +42,7 @@ outputs:
         - fmpy.fmucontainer
         - fmpy.modelica
         - fmpy.ssp
+        # sundials binaries require glibc>=2.29 and cannot be run on the centos7 build image
         - fmpy.sundials  # [not linux]
 
   - name: fmpy
