@@ -3,7 +3,7 @@ package:
   version: 0.3.19
 
 source:
-  https://pypi.io/packages/py3/F/FMPy/FMPy-0.3.19-py3-none-any.whl
+  url: https://pypi.io/packages/py3/F/FMPy/FMPy-0.3.19-py3-none-any.whl
   sha256: d84e98c81c84afd08324097851929ec1ab37f115ec1b1d6366fdc894c4462ef9
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
