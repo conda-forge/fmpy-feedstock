@@ -3,14 +3,13 @@ package:
   version: 0.3.19
 
 source:
-  url: https://files.pythonhosted.org/packages/f3/32/7598a599795806d5d4a06d94faeb8412723845f1afa80bf58575002359b2/FMPy-0.3.19-py3-none-any.whl
+  https://pypi.io/packages/py3/F/FMPy/FMPy-0.3.19-py3-none-any.whl
   sha256: d84e98c81c84afd08324097851929ec1ab37f115ec1b1d6366fdc894c4462ef9
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
 
@@ -43,6 +42,7 @@ outputs:
         - fmpy.fmucontainer
         - fmpy.modelica
         - fmpy.ssp
+        # sundials binaries require glibc>=2.29 and cannot be run on the cos7 build image
         - fmpy.sundials  # [not linux]
 
   - name: fmpy
