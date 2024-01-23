@@ -9,7 +9,7 @@ source:
   # Windows: certutil -hashfile <file> SHA256
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
@@ -21,20 +21,18 @@ outputs:
     script: build_base.sh  # [not win]
     requirements:
       host:
-        - python
+        - python >=3.5
         - pip
       run:
-        - python
+        - python >=3.5
         - attrs
         - jinja2
-        - lark-parser
+        - lark
         - lxml
         - msgpack-python
         - numpy
-        - pathlib
         - pywin32  # [win]
         - pytz
-        - requests
     test:
       imports:
         - fmpy
@@ -50,13 +48,17 @@ outputs:
       noarch: python
     requirements:
       run:
-        - dash-bootstrap-components
+        - dash-bootstrap-components >=1.0.0
         - dask
         - matplotlib-base
-        - nbformat
+        - notebook
+        - plotly
         - pyqt
         - pyqtgraph
         - pyqtwebengine
+        - python-kaleido
+        - requests
+        - scipy
         - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
     test:
       imports:
