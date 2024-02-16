@@ -1,15 +1,15 @@
 package:
   name: fmpy
-  version: 0.3.19
+  version: 0.3.20
 
 source:
-  url: https://files.pythonhosted.org/packages/f3/32/7598a599795806d5d4a06d94faeb8412723845f1afa80bf58575002359b2/FMPy-0.3.19-py3-none-any.whl
-  sha256: d84e98c81c84afd08324097851929ec1ab37f115ec1b1d6366fdc894c4462ef9
+  url: https://files.pythonhosted.org/packages/4a/de/abc4e60c36de7dc16535a63511240b2430124f3d708ddb59d641065de60a/FMPy-0.3.20-py3-none-any.whl
+  sha256: 3993b4fc961c754340b100be718783f55d8169ad456ee7b376f551f278cf91d5
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
@@ -32,7 +32,6 @@ outputs:
         - msgpack-python
         - numpy
         - pywin32  # [win]
-        - pytz
     test:
       imports:
         - fmpy
