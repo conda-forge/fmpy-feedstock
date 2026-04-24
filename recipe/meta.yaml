@@ -9,7 +9,7 @@ source:
   # Windows: certutil -hashfile <file> SHA256
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
@@ -60,6 +60,8 @@ outputs:
         - scipy
         - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - fmpy.gui
         - fmpy.webapp
