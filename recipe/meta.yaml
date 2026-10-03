@@ -1,16 +1,17 @@
+{% set version = "0.3.32" %}
+
 package:
   name: fmpy
-  version: 0.3.20
+  version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/4a/de/abc4e60c36de7dc16535a63511240b2430124f3d708ddb59d641065de60a/FMPy-0.3.20-py3-none-any.whl
-  sha256: 3993b4fc961c754340b100be718783f55d8169ad456ee7b376f551f278cf91d5
+  url: https://files.pythonhosted.org/packages/py3/f/fmpy/fmpy-{{ version }}-py3-none-any.whl
+  sha256: b379deb9417b842028003a288d00c1c5f138d1580e1ff12cc6c42a98719cecf0
   # macOS: shasum -a 256 <file>
   # Windows: certutil -hashfile <file> SHA256
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
   entry_points:
     - fmpy = fmpy.command_line:main
 
@@ -21,10 +22,11 @@ outputs:
     script: build_base.sh  # [not win]
     requirements:
       host:
-        - python >=3.5
+        - python >={{ python_min }}
         - pip
+        - setuptools
       run:
-        - python >=3.5
+        - python >={{ python_min }}
         - attrs
         - jinja2
         - lark
@@ -33,20 +35,24 @@ outputs:
         - numpy
         - pywin32  # [win]
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - fmpy
         - fmpy.cross_check
         - fmpy.examples
-        - fmpy.fmucontainer
-        - fmpy.modelica
+        - fmpy.container_fmu
         - fmpy.ssp
-        - fmpy.sundials  # [not linux]
+        - fmpy.sundials  # [not unix]
 
   - name: fmpy
     build:
       noarch: python
     requirements:
+      host:
+        - python {{ python_min }}
       run:
+        - python >={{ python_min }}
         - dash-bootstrap-components >=1.0.0
         - dask
         - matplotlib-base
@@ -60,6 +66,8 @@ outputs:
         - scipy
         - {{ pin_subpackage('fmpy-base', max_pin="x.x.x") }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - fmpy.gui
         - fmpy.webapp
@@ -77,3 +85,4 @@ extra:
   recipe-maintainers:
     - t-sommer
     - wulmer
+    - jschueller
